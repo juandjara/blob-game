@@ -8,6 +8,7 @@ public class InputReading : ScriptableObject, InputSystem_Actions.IPlayerActions
 {
 
     public event UnityAction<Vector2> Move = delegate { };
+    public event UnityAction OpenMenu = delegate { }; 
 
     private InputSystem_Actions _gameInput;
 
@@ -42,44 +43,11 @@ public class InputReading : ScriptableObject, InputSystem_Actions.IPlayerActions
         Move.Invoke(context.ReadValue<Vector2>());
     }
 
-    public void OnLook(InputAction.CallbackContext context)
+    public void OnOpenMenu(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if(context.performed) OpenMenu.Invoke();
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnCrouch(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnPrevious(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnNext(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnSprint(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
+  
     #endregion
 }

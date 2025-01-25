@@ -8,14 +8,14 @@ public class PlayerManager : MonoBehaviour
     public InputReading playerInput;
     public Rigidbody2D rb;
 
-    private float horizontal;
-    private float vertical;
-    private float speed = 5f;
+    private float _horizontal;
+    private float _vertical;
+    private float _speed = 5f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        OnEnable();
     }
 
     // Update is called once per frame
@@ -26,23 +26,32 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
+        rb.linearVelocity = new Vector2(_horizontal * _speed, _vertical * _speed);
     }
 
     private void OnEnable()
     {
         playerInput.EnablePlayerInput();
         playerInput.Move += OnMove;
+        playerInput.OpenMenu += OnOpenMenu;
     }
 
     private void OnDisable()
     {
         playerInput.Move -= OnMove;
+        playerInput.OpenMenu += OnOpenMenu;
     }
 
-    private void OnMove(Vector2 movementVector)
+    public void OnMove(Vector2 movementVector)
     {
-        horizontal = movementVector.x;
-        vertical = movementVector.y;
+        _horizontal = movementVector.x;
+        _vertical = movementVector.y;
+    }
+
+    public void OnOpenMenu()
+    {
+        //Hacer aqui cositas de abrir menus y movidas
+        Application.Quit();
+        Debug.Log("Se ha cerrao");
     }
 }
