@@ -1,14 +1,10 @@
-using System;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
-using Vector2 = System.Numerics.Vector2;
 
 public class BubbleMovement : MonoBehaviour
 {
  
     [SerializeField] private float _speed=0.5f;
-    public int Inverse;
     public Vector3 CannonRotation = new Vector3(0,0,0);
 
     private int _angle;
