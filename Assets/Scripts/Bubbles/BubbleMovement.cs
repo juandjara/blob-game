@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class BubbleMovement : MonoBehaviour
 {
- 
+
+    [SerializeField] private Animator _animator;
+    
     [SerializeField] private float _speed=0.5f;
     public Vector3 CannonRotation = new Vector3(0,0,0);
 
@@ -18,11 +21,16 @@ public class BubbleMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    private void Awake()
+    {
+        BubbleMoveRandomDirectionStraight();
+    }
+
     private void Start()
     {
         _angle = Random.Range(shootAngleMin, shootAngleMax);
         Debug.Log("Bubble angle:" +_angle);
-       BubbleMoveRandomDirectionStraight();
+       
     }
     
    private void FixedUpdate()
@@ -45,12 +53,15 @@ public class BubbleMovement : MonoBehaviour
         switch (_angle)
         {
             case < animAngleMin:
+                _animator.SetInteger("Posicion",-1);
                 Debug.Log("animacion izquierda");
                 break;
             case > animAngleMax:
+                _animator.SetInteger("Posicion",1);
                 Debug.Log("animacion derecha");
                 break;
-            default:
+            default:              
+                _animator.SetInteger("Posicion",0);
                 Debug.Log("animación centro");
                 break;
         }
