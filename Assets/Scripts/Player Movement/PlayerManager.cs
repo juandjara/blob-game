@@ -6,13 +6,18 @@ public class PlayerManager : MonoBehaviour
 {
 
     public InputReading playerInput;
-    public Rigidbody2D rb;
-
+    private Rigidbody2D _rigidbody2D;
+    
+    
     private float _horizontal;
     private float _vertical;
-    private float _speed = 5f;
+    public float _speed = 5f;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>(); // Start is called once before the first execution of Update after the MonoBehaviour is created
+    }
+
     void Start()
     {
         OnEnable();
@@ -26,7 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(_horizontal * _speed, _vertical * _speed);
+        _rigidbody2D.linearVelocity = new Vector2(_horizontal * _speed, _vertical * _speed);
     }
 
     private void OnEnable()
@@ -51,7 +56,8 @@ public class PlayerManager : MonoBehaviour
     public void OnOpenMenu()
     {
         //Hacer aqui cositas de abrir menus y movidas
-        Application.Quit();
+        PauseMenu.PausePressed = true;
+        //Application.Quit();
         Debug.Log("Se ha cerrao");
     }
 }
