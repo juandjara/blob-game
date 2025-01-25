@@ -20,13 +20,6 @@ public class PlayerManager : MonoBehaviour
 
     public void toggleSpeedDampening(bool flag) {
         _isDampening = flag;
-        if (_isDampening == false) {
-            _speed = MAX_SPEED;
-        }
-    }
-
-    void dampenSpeed() {
-        _speed = expDecay(_speed,  _minSpeed, _speedDecay, Time.deltaTime);
     }
     
     void Awake()
@@ -47,13 +40,15 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isDampening) {
-            dampenSpeed();
-        }
-        Debug.Log(_speed);
         var x = _horizontal * _speed;
         var y = _vertical * _speed;
         _rigidbody2D.linearVelocity = new Vector2(x, y);
+
+        if (_isDampening) {
+            var center = new Vector2(0, 0);
+            var direction = (center - new Vector2(transform.position.x, transform.position.y)).normalized;
+            _rigidbody2D.AddForce(direction * 5f, ForceMode2D.Impulse);
+        }
     }
 
     private void OnEnable()
