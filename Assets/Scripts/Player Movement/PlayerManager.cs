@@ -73,7 +73,7 @@ public class PlayerManager : MonoBehaviour
     public void OnOpenMenu()
     {
         //Hacer aqui cositas de abrir menus y movidas
-        // PauseMenu.PausePressed = true;
+        PauseMenu.PausePressed = true;
         //Application.Quit();
         Debug.Log("Se ha cerrao");
     }
