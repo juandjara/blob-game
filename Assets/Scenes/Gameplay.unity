@@ -945,7 +945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1968384892}
   offset: {x: 0, y: 0, z: 0}
-  unlock: 0
+  UnlockCamera: 0
+  LockCamera: 0
   lockX: 1
   lockY: 1
   decay: 3.5
