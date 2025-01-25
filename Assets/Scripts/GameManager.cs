@@ -4,8 +4,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
-    public int blobsNeeded = 100;
-    private int currentBlobs = 0;
+    public int blobsNeeded = 10;
+    private int currentBlobs = 1;
 
     public GameObject[] levels;
 
@@ -30,9 +30,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void resetBlobs() {}
+    public void resetBlobs()
+    {
+        currentBlobs = 1;
+    }
 
-    public void addBlob() {}
+    public void addBlob()
+    {
+        if (currentBlobs < blobsNeeded)
+        {
+            currentBlobs++;
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
