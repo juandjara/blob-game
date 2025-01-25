@@ -675,7 +675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1968384892}
   offset: {x: 0, y: 0, z: 0}
-  unlock: 0
+  UnlockCamera: 0
+  LockCamera: 0
   lockX: 1
   lockY: 1
   decay: 3.5
@@ -1307,8 +1308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d812514507519428b8dd1bb9b5070de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blobsNeeded: 100
+  blobsNeeded: 10
   levels: []
+  goop: {fileID: 0}
 --- !u!4 &1050472785
 Transform:
   m_ObjectHideFlags: 0
@@ -1318,7 +1320,7 @@ Transform:
   m_GameObject: {fileID: 1050472783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.099494, y: -0.7902809, z: -0.085076705}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
