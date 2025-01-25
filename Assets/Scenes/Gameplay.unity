@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.35394913, g: 0.35283017, b: 1, a: 1}
+  m_Color: {r: 0.052102324, g: 0.027767902, b: 0.4528302, a: 1}
   m_Intensity: 2.29
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
+  m_PointLightInnerRadius: 0.75
   m_PointLightOuterRadius: 2.5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
@@ -11434,7 +11434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10ad49251c55640b5ed181ff6ae2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrfab: {fileID: 5444662990505810736, guid: 53a25e94f1e12bb46a34a2fe47a66a0f, type: 3}
+  bubblePrfab: {fileID: 5444662990505810736, guid: 589ce33ebbbca9c489acb07cf49d6caf, type: 3}
   spawnPoints:
   - {fileID: 886442370}
   - {fileID: 1203420072}
@@ -11444,7 +11444,7 @@ MonoBehaviour:
   - {fileID: 1299538887}
   - {fileID: 2059459634}
   - {fileID: 412847063}
-  spawnTime: 2
+  spawnTime: 1
 --- !u!114 &1926837344
 MonoBehaviour:
   m_ObjectHideFlags: 0

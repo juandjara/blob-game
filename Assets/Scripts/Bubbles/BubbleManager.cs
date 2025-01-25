@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SpawnManager : MonoBehaviour
+public class BubbleManager : MonoBehaviour
 {
     [SerializeField] private GameObject bubblePrfab;
     [SerializeField] private GameObject[] spawnPoints;
@@ -48,6 +48,17 @@ public class SpawnManager : MonoBehaviour
        
         Instantiate(bubblePrfab, spawnPoints[pt].transform.position, spawnPoints[pt].transform.rotation);
     } 
+    
+    
+    public void setBubbleFrecuency(float time)
+    {
+        spawnTime = time;
+    }
+    
+    public float getBubbleFrecuency()
+    {
+        return spawnTime;
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 /*

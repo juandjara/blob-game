@@ -81,4 +81,15 @@ public class BlobSpawner : MonoBehaviour
     {
         suficientBlobs = true;
     }
+
+    public void setBlobFrecuency(float time)
+    {
+        spawnTime = time;
+    }
+    
+    public float getBlobFrecuency()
+    {
+        return spawnTime;
+    }
+    
 }
