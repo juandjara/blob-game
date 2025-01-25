@@ -50,7 +50,7 @@ public class PlayerManager : MonoBehaviour
         if (_isDampening) {
             dampenSpeed();
         }
-        Debug.Log(_speed);
+        //Debug.Log(_speed);
         var x = _horizontal * _speed;
         var y = _vertical * _speed;
         _rigidbody2D.linearVelocity = new Vector2(x, y);
