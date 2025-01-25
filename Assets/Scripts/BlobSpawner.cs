@@ -13,6 +13,7 @@ public class BlobSpawner : MonoBehaviour
     private float spawnTimer;
     private GameObject spawnPoint;
     
+    public static bool suficientBlobs = false;
     
     
     
@@ -25,24 +26,29 @@ public class BlobSpawner : MonoBehaviour
         spawnPoint = new GameObject();
     }
 
+    void Awake()
+    {
+        suficientBlobs = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        spawnRadius = bubbleRadius - bubbleOffset;
-        if (spawnTimer > 0)
+        if (!suficientBlobs)
         {
-            spawnTimer -= Time.deltaTime;
-            if (spawnTimer <= 0)
-            {
-                SpawnBlob();
+            spawnRadius = bubbleRadius - bubbleOffset;
 
-                spawnTimer += spawnTime;
+            if (spawnTimer > 0)
+            {
+                spawnTimer -= Time.deltaTime;
+                if (spawnTimer <= 0)
+                {
+                    SpawnBlob();
+
+                    spawnTimer += spawnTime;
+                }
             }
         }
-
-
-
-        
     }
 
     private void SpawnBlob()
@@ -65,5 +71,14 @@ public class BlobSpawner : MonoBehaviour
                 spawnPoint.transform.position = new Vector2(spawnX, spawnY);
             }
         }
+    }
+
+    public void startSpawner()
+    {
+        suficientBlobs = false;
+    }
+    public void stopSpawner()
+    {
+        suficientBlobs = true;
     }
 }

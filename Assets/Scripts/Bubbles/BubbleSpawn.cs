@@ -6,6 +6,10 @@ public class BubbleSpawn : MonoBehaviour
 {
     [SerializeField] private int waitingSeconds;
     [SerializeField] private BubbleMovement bubble;
+    [SerializeField] private GameObject[] spawnPoints;
+    
+    
+    
     
     private Vector3 _currentEulerAngles;
     Quaternion _currentRotation;
