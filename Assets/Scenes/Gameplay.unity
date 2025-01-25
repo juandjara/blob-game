@@ -11434,7 +11434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10ad49251c55640b5ed181ff6ae2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrfab: {fileID: 5444662990505810736, guid: 589ce33ebbbca9c489acb07cf49d6caf, type: 3}
+  bubblePrfab: {fileID: 5444662990505810736, guid: 53a25e94f1e12bb46a34a2fe47a66a0f, type: 3}
   spawnPoints:
   - {fileID: 886442370}
   - {fileID: 1203420072}

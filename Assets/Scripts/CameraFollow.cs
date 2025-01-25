@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform player;
     public Vector3 offset;
     
-    public bool unlock = false;
+    public bool UnlockCamera = false;
+    public bool LockCamera = false;
 
+    
     public bool lockX;
     public bool lockY;
     public float decay = 3.5f;
@@ -19,10 +22,15 @@ public class CameraFollow : MonoBehaviour
  
     void Update ()
     {
-        if (unlock)
+        if (UnlockCamera)
         {
-            unlock = false;
+            UnlockCamera = false;
             unlockCamera();
+        }
+        if (LockCamera)
+        {
+            LockCamera = false;
+            lockCamera();
         }
         
         //playerX = player.position.x;
@@ -50,6 +58,12 @@ public class CameraFollow : MonoBehaviour
     {
         lockX = false;
         lockY = false;
+    }
+    
+    public void lockCamera()
+    {
+        lockX = true;
+        lockY = true;
     }
 
 
