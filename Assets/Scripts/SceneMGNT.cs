@@ -1,19 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneMGNT : MonoBehaviour
+public class SceneMGNT: MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void LoadGameplay()
+    public void LoadGameplay()
     {
         SceneManager.LoadScene(1);
     }
-    void LoadGMenu()
+    public void LoadMenu()
     {
         SceneManager.LoadScene(0);
     }
     
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
