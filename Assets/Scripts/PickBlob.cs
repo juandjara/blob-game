@@ -27,7 +27,7 @@ public class PickBlob : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        var player = collider.gameObject.GetComponent<PlayerManager>();
+        var player = collider.gameObject.GetComponent<GoopFollow>();
         if (player) {
             GameManager.instance.addBlob();
             _audioManagerSfx.PlayRandomSound(_audioSource);

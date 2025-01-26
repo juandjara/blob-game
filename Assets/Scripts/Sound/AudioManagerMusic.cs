@@ -19,14 +19,4 @@ public class AudioManagerMusic : MonoBehaviour
         audioSource.Play();
 
     }
-    
-    void Update()
-    {
-        if (seconds < secondsToChangeSong)
-        {
-            timer += Time.deltaTime;
-            seconds = timer % 60;
-            Debug.Log("seconds"+seconds);
-        }else NextSong();
-    }
 }
