@@ -13356,7 +13356,7 @@ MonoBehaviour:
   - {fileID: 1299538887}
   - {fileID: 2059459634}
   - {fileID: 412847063}
-  spawnTime: 2
+  spawnTime: 1
   killTime: 10
 --- !u!114 &1926837344
 MonoBehaviour:
@@ -13371,10 +13371,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blobPrefab: {fileID: 1165830241457446871, guid: 1d2c65241af9a3245994656c2d6a26ba, type: 3}
-  bubbleRadius: 7.5
+  bubbleRadius: 8
   bubbleOffset: 0.5
   bubbleCenter: {fileID: 1355764152}
-  spawnTime: 2
+  spawnTime: 3
 --- !u!1 &1949713721
 GameObject:
   m_ObjectHideFlags: 0
