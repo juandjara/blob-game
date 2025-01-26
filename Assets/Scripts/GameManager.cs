@@ -1,13 +1,25 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
-    public GameObject playerParticles;
+    public GameObject playerGoop;
+    public GameObject player;
+
+    public GameObject cameraFollow;
 
     public int blobsNeeded = 10;
+    
     private int currentBlobs = 1;
+
+    public bool isWinCondition
+    {
+        get {
+            return currentBlobs >= blobsNeeded;
+        }
+    }
 
     public GameObject[] levels;
 
@@ -17,7 +29,7 @@ public class GameManager : MonoBehaviour
         if (instance != null && instance != this) 
         { 
             Destroy(this); 
-        } 
+        }
         else 
         { 
             instance = this; 
@@ -37,12 +49,15 @@ public class GameManager : MonoBehaviour
 
     public void addBlob()
     {
+        Debug.Log($"currentBlobs: {currentBlobs}");
         if (currentBlobs < blobsNeeded)
         {
             currentBlobs++;
-            if (playerParticles) {
-                playerParticles.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+            if (playerGoop) {
+                playerGoop.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             }
+        } else {
+            cameraFollow.GetComponent<CameraFollow>().unlockCamera();
         }
     }
 

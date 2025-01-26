@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class OuterBubble : MonoBehaviour
@@ -16,6 +17,10 @@ public class OuterBubble : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
+        if (GameManager.instance.isWinCondition) {
+            return;
+        }
+
         var point = collider.ClosestPoint(transform.position);
         var player = collider.gameObject.GetComponent<PlayerManager>();
         if (player) {

@@ -14,7 +14,6 @@ public class PlayerManager : MonoBehaviour
     private float _horizontal;
     private float _vertical;
     private float _speed = 5f;
-    private float _minSpeed = 0.5f;
     public float _speedDecay = 16f;
     private bool _isDampening = false;
 
@@ -80,17 +79,6 @@ public class PlayerManager : MonoBehaviour
         //Application.Quit();
         Debug.Log("Se ha cerrao");
     }
-    /*
-    public void OnStartGame()
-    {
-        if (!_isStarted)
-        {
-            _isStarted = true;
-            initScrn.SetActive(false);
-            Time.timeScale = 1f;
-        }
-    } 
-    */
 
     float expDecay(float a, float b, float decay, float dt)
     {
