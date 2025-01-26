@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OuterBubble : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class OuterBubble : MonoBehaviour
             cam.unlockCamera();
             //bubbleOut.enabled = false;
             _animator.SetTrigger("Break");
+
+            SceneManager.LoadScene(0);
+
             return;
         }
 
