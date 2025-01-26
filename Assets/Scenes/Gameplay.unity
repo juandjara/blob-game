@@ -1990,7 +1990,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.49999997
+  m_Radius: 0.45
 --- !u!1 &1101301457
 GameObject:
   m_ObjectHideFlags: 0
@@ -11488,7 +11488,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
+  m_Radius: 0.9
 --- !u!1 &1299538887
 GameObject:
   m_ObjectHideFlags: 0
@@ -12553,7 +12553,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926837341}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51a36362a218b7040a4d5145b600fa8e, type: 3}
   m_Name: 
