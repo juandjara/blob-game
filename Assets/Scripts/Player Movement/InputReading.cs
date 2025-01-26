@@ -9,6 +9,7 @@ public class InputReading : ScriptableObject, InputSystem_Actions.IPlayerActions
 
     public event UnityAction<Vector2> Move = delegate { };
     public event UnityAction OpenMenu = delegate { }; 
+    public event UnityAction StartGame = delegate { }; 
 
     private InputSystem_Actions _gameInput;
 
@@ -47,7 +48,12 @@ public class InputReading : ScriptableObject, InputSystem_Actions.IPlayerActions
     {
         if(context.performed) OpenMenu.Invoke();
     }
-
+    /*
+    public void OnStartGame(InputAction.CallbackContext context)
+    {
+        if(context.performed) StartGame.Invoke();
+    }
+    */
   
     #endregion
 }

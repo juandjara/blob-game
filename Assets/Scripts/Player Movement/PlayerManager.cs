@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
     public float _speedDecay = 16f;
     private bool _isDampening = false;
 
+    public GameObject initScrn;
+
     public void toggleSpeedDampening(bool flag) {
         _isDampening = flag;
     }
@@ -30,6 +32,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         OnEnable();
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
@@ -77,6 +80,17 @@ public class PlayerManager : MonoBehaviour
         //Application.Quit();
         Debug.Log("Se ha cerrao");
     }
+    /*
+    public void OnStartGame()
+    {
+        if (!_isStarted)
+        {
+            _isStarted = true;
+            initScrn.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    } 
+    */
 
     float expDecay(float a, float b, float decay, float dt)
     {
