@@ -3,16 +3,15 @@ using UnityEngine;
 
 public class OuterBubble : MonoBehaviour
 {
-    public SpriteRenderer bubbleImg;
-    public SpriteRenderer bubbleOut;
+    private SpriteRenderer bubbleOut;
     public CameraFollow cam;
     
     [SerializeField] private Animator _animator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        bubbleOut = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,8 +24,7 @@ public class OuterBubble : MonoBehaviour
     {
         if (GameManager.instance.isWinCondition) {
             cam.unlockCamera();
-            bubbleOut.enabled = false;
-            bubbleImg.enabled = false; 
+            //bubbleOut.enabled = false;
             _animator.SetTrigger("Break");
             return;
         }
