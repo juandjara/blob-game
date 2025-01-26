@@ -4,12 +4,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
+    public GameObject playerParticles;
+
     public int blobsNeeded = 10;
     private int currentBlobs = 1;
 
     public GameObject[] levels;
-
-    public GameObject goop;
 
     private void Awake() 
     { 
@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
         if (currentBlobs < blobsNeeded)
         {
             currentBlobs++;
+            if (playerParticles) {
+                playerParticles.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+            }
         }
     }
 

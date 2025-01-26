@@ -12425,7 +12425,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -17322,9 +17322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d812514507519428b8dd1bb9b5070de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerParticles: {fileID: 1949713721}
   blobsNeeded: 10
   levels: []
-  goop: {fileID: 0}
 --- !u!4 &2044220631
 Transform:
   m_ObjectHideFlags: 0

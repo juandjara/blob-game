@@ -24,7 +24,6 @@ public class PickBlob : MonoBehaviour
     {
         var player = collider.gameObject.GetComponent<PlayerManager>();
         if (player) {
-            player.gameObject.transform.localScale += new Vector3(1f, 1f, 0);
             GameManager.instance.addBlob();
             Destroy(gameObject);
         }
