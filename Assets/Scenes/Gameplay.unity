@@ -1217,7 +1217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &575130860
 Animator:
   serializedVersion: 7
@@ -1343,7 +1343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &592168596
 Animator:
   serializedVersion: 7
@@ -18564,9 +18564,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 370925183}
   - {fileID: 1571510700}
+  - {fileID: 189720540}
   - {fileID: 592168600}
   - {fileID: 575130864}
-  - {fileID: 189720540}
   - {fileID: 1118239403}
   - {fileID: 89612575}
   - {fileID: 985696578}
