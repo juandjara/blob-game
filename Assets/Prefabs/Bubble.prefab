@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 160656725918687557}
   - component: {fileID: 2762178704374643852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 432256825325609430}
   - component: {fileID: 5672201021669639013}
   - component: {fileID: 4019286982889499848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 1401473538367954905}
   - component: {fileID: 1429202048583185225}
   - component: {fileID: 5662763490358611206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AnimationChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}

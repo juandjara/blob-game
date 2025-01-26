@@ -139,5 +139,22 @@ public class BubbleMovement : MonoBehaviour
         );
     }
     
-    
+    void OnTriggerEnter2D(Collider2D collider) {
+        var playerParticles = collider.gameObject.GetComponent<GoopFollow>();
+        if (playerParticles) {
+            GameManager.instance.damagePlayer();
+        } else {
+            var blob = collider.gameObject.GetComponent<PickBlob>();
+            if (blob) {
+                Destroy(collider.gameObject);
+            }
+        }
+        DieBubble();
+    }
+
+    void DieBubble() {
+        GetComponent<SpriteRenderer>().gameObject.SetActive(false);
+        GetComponent<Collider2D>().gameObject.SetActive(false);
+        // play bubble explosion animation
+    }
 }

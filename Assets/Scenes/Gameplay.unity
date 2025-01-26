@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 1037905864}
   - component: {fileID: 1037905866}
   - component: {fileID: 1037905867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuterBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1958,6 +1958,7 @@ MonoBehaviour:
   bubbleImg: {fileID: 1417149457}
   bubbleOut: {fileID: 1037905864}
   cam: {fileID: 370925185}
+  _animator: {fileID: 0}
 --- !u!58 &1037905867
 CircleCollider2D:
   m_ObjectHideFlags: 0

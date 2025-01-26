@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     
     private int currentBlobs = 1;
 
+    private float scaleStep = 0.5f;
+
     public bool isWinCondition
     {
         get {
@@ -48,6 +50,9 @@ public class GameManager : MonoBehaviour
     public void resetBlobs()
     {
         currentBlobs = 1;
+        if (playerGoop) {
+            playerGoop.transform.localScale = new Vector3(1, 1, 0);
+        }
     }
 
     public void addBlob()
@@ -57,7 +62,7 @@ public class GameManager : MonoBehaviour
         {
             currentBlobs++;
             if (playerGoop) {
-                playerGoop.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+                playerGoop.transform.localScale += new Vector3(scaleStep, scaleStep, 0);
             }
         } else {
             
@@ -67,6 +72,15 @@ public class GameManager : MonoBehaviour
             
             
             //cameraFollow.GetComponent<CameraFollow>().unlockCamera();
+        }
+    }
+
+    public void damagePlayer() {
+        if (currentBlobs > 1) {
+            resetBlobs();
+        } else {
+            // GAME OVER
+            Time.timeScale = 0f;
         }
     }
 

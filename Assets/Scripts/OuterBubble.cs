@@ -34,7 +34,7 @@ public class OuterBubble : MonoBehaviour
         var point = collider.ClosestPoint(transform.position);
         var player = collider.gameObject.GetComponent<PlayerManager>();
         if (player) {
-            player.toggleSpeedDampening(false);
+            // player.toggleSpeedDampening(false);
             var rb = player.gameObject.GetComponent<Rigidbody2D>();
             rb.AddForce(point * -1000, ForceMode2D.Force);
         }
