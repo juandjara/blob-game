@@ -1955,6 +1955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b6155dd5154b9883b006bd86c5e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleImg: {fileID: 1417149457}
+  bubbleOut: {fileID: 1037905864}
+  cam: {fileID: 370925185}
 --- !u!58 &1037905867
 CircleCollider2D:
   m_ObjectHideFlags: 0

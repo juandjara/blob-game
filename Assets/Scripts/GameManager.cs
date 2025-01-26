@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerGoop;
     public GameObject player;
+    
+    
 
+    
     public GameObject cameraFollow;
 
     public int blobsNeeded = 10;
@@ -57,7 +60,13 @@ public class GameManager : MonoBehaviour
                 playerGoop.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             }
         } else {
-            cameraFollow.GetComponent<CameraFollow>().unlockCamera();
+            
+            
+            //Animation Pompa
+            //DesactSpriteRender
+            
+            
+            //cameraFollow.GetComponent<CameraFollow>().unlockCamera();
         }
     }
 

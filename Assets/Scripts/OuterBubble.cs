@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class OuterBubble : MonoBehaviour
 {
+    public SpriteRenderer bubbleImg;
+    public SpriteRenderer bubbleOut;
+    public CameraFollow cam;
+    
+    [SerializeField] private Animator _animator;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +24,10 @@ public class OuterBubble : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider)
     {
         if (GameManager.instance.isWinCondition) {
+            cam.unlockCamera();
+            bubbleOut.enabled = false;
+            bubbleImg.enabled = false; 
+            _animator.SetTrigger("Break");
             return;
         }
 
