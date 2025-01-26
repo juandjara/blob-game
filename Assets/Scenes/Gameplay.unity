@@ -11436,6 +11436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrfab: {fileID: 5444662990505810736, guid: 53a25e94f1e12bb46a34a2fe47a66a0f, type: 3}
+  animationPrefab: {fileID: 3917173102108965500, guid: 3338c5c21f25a0e4e9401c2e88cfec59, type: 3}
   spawnPoints:
   - {fileID: 886442370}
   - {fileID: 1203420072}

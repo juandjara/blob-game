@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class BubbleManager : MonoBehaviour
 {
     [SerializeField] private GameObject bubblePrfab;
+    [SerializeField] private GameObject animationPrefab;
     [SerializeField] private GameObject[] spawnPoints;
     
     [SerializeField] private float spawnTime = 2f;
@@ -15,7 +16,10 @@ public class BubbleManager : MonoBehaviour
     Quaternion _currentRotation;
     private Vector3 _currentPosition;
     
-    
+    private const int animAngleMin = -30;
+    private const int animAngleMax = 30;
+
+    private Animator _animator;
     
     void Start()
     {
@@ -30,8 +34,7 @@ public class BubbleManager : MonoBehaviour
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0)
             {
-                CreateBubble(Random.Range(0, spawnPoints.Length-1));
-
+                CreateBubble(Random.Range(0, spawnPoints.Length ));
                 spawnTimer += spawnTime;
             }
         }
@@ -46,9 +49,36 @@ public class BubbleManager : MonoBehaviour
         bubble.CannonRotation = rotation;
        */
        
-        Instantiate(bubblePrfab, spawnPoints[pt].transform.position, spawnPoints[pt].transform.rotation);
+        GameObject bubble= Instantiate(bubblePrfab, spawnPoints[pt].transform.position, spawnPoints[pt].transform.rotation);
+        GameObject animation = Instantiate(animationPrefab, spawnPoints[pt].transform.position,
+            spawnPoints[pt].transform.rotation);
+        _animator = animation.GetComponent<Animator>();
+        //Debug.Log("angle :) " +bubble.GetComponent<BubbleMovement>().GetAngle());
+        BubbleMoveRandomDirectionStraight(bubble.GetComponent<BubbleMovement>().GetAngle());
     } 
     
+    public void BubbleMoveRandomDirectionStraight(int _angle)
+    {
+        
+        //animacion
+        switch (_angle)
+        {
+            case < animAngleMin:
+                _animator.SetInteger("Posicion",-1);
+                Debug.Log("animacion izquierda");
+                break;
+            case > animAngleMax:
+                _animator.SetInteger("Posicion",1);
+                Debug.Log("animacion derecha");
+                break;
+            default:              
+                _animator.SetInteger("Posicion",0);
+                Debug.Log("animación centro");
+                break;
+        }
+        
+       
+    }
     
     public void setBubbleFrecuency(float time)
     {
