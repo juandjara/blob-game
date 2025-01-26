@@ -8,6 +8,7 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] private GameObject[] spawnPoints;
     
     [SerializeField] private float spawnTime = 2f;
+    [SerializeField] private float killTime = 15f;
     private float spawnTimer;
     
     
@@ -46,7 +47,8 @@ public class BubbleManager : MonoBehaviour
         bubble.CannonRotation = rotation;
        */
        
-        Instantiate(bubblePrfab, spawnPoints[pt].transform.position, spawnPoints[pt].transform.rotation);
+        var bubble = Instantiate(bubblePrfab, spawnPoints[pt].transform.position, spawnPoints[pt].transform.rotation);
+        Destroy(bubble, killTime);
     } 
     
     

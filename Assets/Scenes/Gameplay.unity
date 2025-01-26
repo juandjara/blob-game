@@ -12222,7 +12222,8 @@ MonoBehaviour:
   - {fileID: 1299538887}
   - {fileID: 2059459634}
   - {fileID: 412847063}
-  spawnTime: 1
+  spawnTime: 2
+  killTime: 10
 --- !u!114 &1926837344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12230,7 +12231,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926837341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51a36362a218b7040a4d5145b600fa8e, type: 3}
   m_Name: 
